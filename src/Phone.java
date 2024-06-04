@@ -14,6 +14,7 @@ public class Phone implements Serializable {
     private String brand;
 
 
+
     public Phone(int id, String name, String sku, float price, float regular_price, float lowest_price,
                  String discount_type, String brand_name, String brand) {
         this.id = id;

@@ -1,3 +1,6 @@
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -11,7 +14,7 @@ public class Main {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("https://fenrir.altex.ro/catalog/category/telefoane?size=48"))
+                .uri(new URI("https://fenrir.altex.ro/catalog/category/telefoane?size=1000"))
                 .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
                 .header("Accept-Encoding", "gzip, deflate, br, zstd")
                 .header("Accept-Language", "en-US,en;q=0.9")
@@ -49,6 +52,11 @@ public class Main {
             responseBody = new String(response.body());
         }
 
-        System.out.println(responseBody);
+        JsonMapper jsonMapper = new JsonMapper();
+        JsonNode root = jsonMapper.readTree(responseBody);
+        JsonNode products = root.get("products");
+//        System.out.println(products);
+
+        products.forEach(System.out::println);
     }
 }

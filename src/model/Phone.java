@@ -1,3 +1,5 @@
+package model;
+
 import java.io.Serializable;
 
 public class Phone implements Serializable {
@@ -30,7 +32,7 @@ public class Phone implements Serializable {
 
     @Override
     public String toString() {
-        return "Phone{" +
+        return "model.Phone{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sku='" + sku + '\'' +

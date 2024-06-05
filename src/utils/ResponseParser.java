@@ -2,8 +2,11 @@ package utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import model.Phone;
+
 import java.io.IOException;
 import java.util.List;
+
 import model.Phone;
 
 public class ResponseParser {

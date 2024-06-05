@@ -108,7 +108,7 @@ public class Phone implements Serializable {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Phone{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sku='" + sku + '\'' +

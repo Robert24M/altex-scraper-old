@@ -1,11 +1,8 @@
+package model;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
-
-
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Phone implements Serializable {
 
@@ -19,7 +16,8 @@ public class Phone implements Serializable {
     private String discount_type;
     private String brand_name;
     private String brand;
-    @JsonProperty("id")
+
+
     public int getId() {
         return id;
     }
@@ -92,8 +90,8 @@ public class Phone implements Serializable {
         this.brand = brand;
     }
 
-    public Phone(@JsonProperty("id") int id,@JsonProperty("name") String name,@JsonProperty("sku") String sku,float price, float regular_price, float lowest_price,
-                 String discount_type, String brand_name, String brand ) {
+    public Phone(int id, String name, String sku, float price, float regular_price, float lowest_price,
+                 String discount_type, String brand_name, String brand) {
         this.id = id;
         this.name = name;
         this.sku = sku;
@@ -104,13 +102,13 @@ public class Phone implements Serializable {
         this.brand_name = brand_name;
         this.brand = brand;
     }
-    public Phone(){
 
+    public Phone() {
     }
 
     @Override
     public String toString() {
-        return "Phone{" +
+        return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sku='" + sku + '\'' +
